@@ -54,17 +54,10 @@ except:
 
 # Function to check if the snake has reached the borders
 def border_check():
-    global snake_x, snake_y, window_width, window_height
+    global snake_x, snake_y, window_width, window_height, game_over
     # For x-axis
-    if snake_x > window_width - snake_size:
-        snake_x = 0
-    elif snake_x < 0:
-        snake_x = window_width - snake_size
-    # For y-axis
-    if snake_y > window_height - snake_size:
-        snake_y = 0
-    elif snake_y < 0:
-        snake_y = window_height - snake_size
+    if snake_x == 0 or snake_y == 0 or snake_x == window_width or snake_y == window_height:
+        game_over = True
 
 
 # Function to get the co-ordinates for food
